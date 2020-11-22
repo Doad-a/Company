@@ -1,0 +1,1024 @@
+js验证表单大全
+正则表达式：
+"^\\d+$"　　　　　　　　　　//非负整数（正整数 + 0） 
+"^[0-9]*[1-9][0-9]*$"　　　 //正整数 
+"^((-\\d+)|(0+))$"　　　　    //非正整数（负整数 + 0） 
+"^-[0-9]*[1-9][0-9]*$"　　  //负整数 
+"^-?\\d+$"　　　　　　　　   //整数 
+"^\\d+("　　　　　　　　　　 //非负浮点数（正浮点数 + 0） 
+"^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$"　　　　//正浮点数
+"^((-\\d+("　　　　　　　　   //非正浮点数（负浮点数 + 0） 
+"^(-(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*)))$"　　  //负浮点数 
+"^(-?\\d+)("　　　　　　　　 //浮点数
+
+ "/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/";//Email验证
+
+
+1. 长度限制
+<script>
+function test() 
+{
+if(document.a.b.value.length>50)
+{
+alert("不能超过50个字符！");
+document.a.b.focus();
+return false;
+}
+}
+</script>
+<form name=a onsubmit="return test()">
+<textarea name="b" cols="40" wrap="VIRTUAL" rows="6"></textarea>
+<input type="submit" name="Submit" value="check">
+</form> 
+
+2. 只能是汉字 
+<input onkeyup="value="/oblog/value.replace(/[^\u4E00-\u9FA5]/g,'')">
+
+3." 只能是英文
+<script language=javascript>
+function onlyEng()
+{
+if(!(event.keyCode>=65&&event.keyCode<=90))
+event.returnvalue=false;
+}
+</script>
+
+<input onkeydown="onlyEng();">
+
+4. 只能是数字
+<script language=javascript>
+function onlyNum()
+{
+if(!((event.keyCode>=48&&event.keyCode<=57)||(event.keyCode>=96&&event.keyCode<=105)))
+//考虑小键盘上的数字键
+event.returnvalue=false;
+}
+</script>
+
+<input onkeydown="onlyNum();">
+
+5. 只能是英文字符和数字
+<input onkeyup="value="/oblog/value.replace(/[\W]/g,"'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))">
+
+6. 验证油箱格式
+<SCRIPT LANGUAGE=javascript RUNAT=Server>
+function isEmail(strEmail) {
+if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) != -1)
+return true;
+else
+alert("oh");
+}
+</SCRIPT>
+<input type=text onblur=isEmail(this.value)>
+
+7. 屏蔽关键字(这里屏蔽***和****)
+<script language="javascript1.2">
+function test() {
+if((a.b.value.indexOf ("***") == 0)||(a.b.value.indexOf ("****") == 0)){
+alert(":)");
+a.b.focus();
+return false;}
+}
+</script>
+<form name=a onsubmit="return test()">
+<input type=text name=b>
+<input type="submit" name="Submit" value="check">
+</form>
+
+8. 两次输入密码是否相同
+<FORM METHOD=POST ACTION="">
+<input type="password" id="input1">
+<input type="password" id="input2">
+<input type="button" value="test" onclick="check()">
+</FORM>
+<script>
+function check()
+{ 
+with(document.all){
+if(input1.value!=input2.value)
+{
+alert("false")
+input1.value = "";
+input2.value = "";
+}
+else document.forms[0].submit();
+}
+}
+</script>
+够了吧 :)
+屏蔽右键 很酷 
+oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+加在body中
+
+
+二
+
+2.1   表单项不能为空
+
+<script   language="javascript">
+<!--
+function   CheckForm()
+{  
+if   (document.form.name.value.length   ==   0)   {  
+alert("请输入您姓名!");
+document.form.name.focus();
+return   false;
+}
+return   true;
+}
+-->
+</script>
+
+2.2   比较两个表单项的值是否相同
+
+<script   language="javascript">
+<!--
+function   CheckForm()
+if   (document.form.PWD.value   !=   document.form.PWD_Again.value)   {  
+alert("您两次输入的密码不一样！请重新输入.");
+document.ADDUser.PWD.focus();
+return   false;
+}
+return   true;
+}
+-->
+</script>
+
+2.3   表单项只能为数字和"_",用于电话/银行帐号验证上,可扩展到域名注册等
+
+<script   language="javascript">
+<!--
+function   isNumber(String)
+{  
+var   Letters   =   "1234567890-";   //可以自己增加可输入值
+var   i;
+var   c;
+if(String.charAt(   0   )=='-')
+return   false;
+if(   String.charAt(   String.length   -   1   )   ==   '-'   )
+return   false;
+for(   i   =   0;   i   <   String.length;   i   ++   )
+{  
+c   =   String.charAt(   i   );
+if   (Letters.indexOf(   c   )   <   0)
+return   false;
+}
+return   true;
+}
+function   CheckForm()
+{  
+if(!   isNumber(document.form.TEL.value))   {  
+alert("您的电话号码不合法！");
+document.form.TEL.focus();
+return   false;
+}
+return   true;
+}
+-->
+</script>
+
+
+2.4   表单项输入数值/长度限定
+
+<script   language="javascript">
+<!--
+function   CheckForm()  
+{  
+if   (document.form.count.value   >   100   ||   document.form.count.value   <   1)
+{  
+alert("输入数值不能小于零大于100!");
+document.form.count.focus();
+return   false;
+}
+if   (document.form.MESSAGE.value.length<10)
+{  
+alert("输入文字小于10!");
+document.form.MESSAGE.focus();
+return   false;
+}
+return   true;
+}
+//-->
+</script>
+
+2.5   中文/英文/数字/邮件地址合法性判断
+
+<SCRIPT   LANGUAGE="javascript">
+<!--
+
+function   isEnglish(name)   //英文值检测
+{  
+if(name.length   ==   0)
+return   false;
+for(i   =   0;   i   <   name.length;   i++)   {  
+if(name.charCodeAt(i)   >   128)
+return   false;
+}
+return   true;
+}
+
+function   isChinese(name)   //中文值检测
+{  
+if(name.length   ==   0)
+return   false;
+for(i   =   0;   i   <   name.length;   i++)   {  
+if(name.charCodeAt(i)   >   128)
+return   true;
+}
+return   false;
+}
+
+function   isMail(name)   //   E-mail值检测
+{  
+if(!   isEnglish(name))
+return   false;
+i   =   name.indexOf("   at   ");
+j   =   name   dot   lastIndexOf("   at   ");
+if(i   ==   -1)
+return   false;
+if(i   !=   j)
+return   false;
+if(i   ==   name   dot   length)
+return   false;
+return   true;
+}
+
+function   isNumber(name)   //数值检测
+{  
+if(name.length   ==   0)
+return   false;
+for(i   =   0;   i   <   name.length;   i++)   {  
+if(name.charAt(i)   <   "0"   ||   name.charAt(i)   >   "9")
+return   false;
+}
+return   true;
+}
+
+function   CheckForm()
+{  
+if(!   isMail(form.Email.value))   {  
+alert("您的电子邮件不合法！");
+form.Email.focus();
+return   false;
+}
+if(!   isEnglish(form.name.value))   {  
+alert("英文名不合法！");
+form.name.focus();
+return   false;
+}
+if(!   isChinese(form.cnname.value))   {  
+alert("中文名不合法！");
+form.cnname.focus();
+return   false;
+}
+if(!   isNumber(form.PublicZipCode.value))   {  
+alert("邮政编码不合法！");
+form.PublicZipCode.focus();
+return   false;
+}
+return   true;
+}
+//-->
+</SCRIPT>
+
+2.6   限定表单项不能输入的字符
+
+<script   language="javascript">
+<!--
+
+function   contain(str,charset)//   字符串包含测试函数
+{  
+var   i;
+for(i=0;i<charset.length;i++)
+if(str.indexOf(charset.charAt(i))>=0)
+return   true;
+return   false;
+}
+
+function   CheckForm()
+{  
+if   ((contain(document.form.NAME.value,   "%\(\)><"))   ||   (contain(document.form.MESSAGE.value,   "%\(\)><")))
+{  
+alert("输入了非法字符");
+document.form.NAME.focus();
+return   false;
+}
+return   true;
+}
+//-->
+</script>  
+
+1. 检查一段字符串是否全由数字组成       
+---------------------------------------       
+<script language="Javascript"><!--           
+function checkNum(str){return str.match(/\D/)==null}           
+alert(checkNum("1232142141"))           
+alert(checkNum("123214214a1"))           
+// --></script>         
+      
+2. 怎么判断是否是字符         
+---------------------------------------       
+if (/[^\x00-\xff]/g.test(s)) alert("含有汉字");          
+else alert("全是字符");      
+           
+3. 怎么判断是否含有汉字        
+---------------------------------------        
+if (escape(str).indexOf("%u")!=-1) alert("含有汉字");         
+else alert("全是字符");           
+    
+4. 邮箱格式验证    
+---------------------------------------      
+//函数名：chkemail     
+//功能介绍：检查是否为Email Address     
+//参数说明：要检查的字符串     
+//返回值：0：不是 1：是     
+function chkemail(a)     
+{ var i=a.length;     
+var temp = a.indexOf('@');     
+var tempd = a.indexOf('.');     
+if (temp > 1) {     
+if ((i-temp) > 3){     
+if ((i-tempd)>0){     
+return 1;     
+}     
+    
+}     
+}     
+return 0;     
+}     
+    
+5. 数字格式验证    
+---------------------------------------      
+//函数名：fucCheckNUM     
+//功能介绍：检查是否为数字     
+//参数说明：要检查的数字     
+//返回值：1为是数字，0为不是数字     
+function fucCheckNUM(NUM)     
+{     
+var i,j,strTemp;     
+strTemp="0123456789";     
+if ( NUM.length== 0)     
+return 0     
+for (i=0;i<NUM.length;i++)     
+{     
+j=strTemp.indexOf(NUM.charAt(i));     
+if (j==-1)     
+{     
+//说明有字符不是数字     
+return 0;     
+}     
+}     
+//说明是数字     
+return 1;     
+}     
+    
+6. 电话号码格式验证    
+---------------------------------------      
+//函数名：fucCheckTEL     
+//功能介绍：检查是否为电话号码     
+//参数说明：要检查的字符串     
+//返回值：1为是合法，0为不合法     
+function fucCheckTEL(TEL)     
+{     
+var i,j,strTemp;     
+strTemp="0123456789-()# ";     
+for (i=0;i<TEL.length;i++)     
+{     
+j=strTemp.indexOf(TEL.charAt(i));     
+if (j==-1)     
+{     
+//说明有字符不合法     
+return 0;     
+}     
+}     
+//说明合法     
+return 1;     
+}    
+   
+7. 判断输入是否为中文的函数   
+---------------------------------------      
+function ischinese(s){   
+var ret=true;   
+for(var i=0;i<s.length;i++)   
+ret=ret && (s.charCodeAt(i)>=10000);   
+return ret;   
+}    
+   
+8. 综合的判断用户输入的合法性的函数  
+---------------------------------------      
+<script language="javascript">  
+//限制输入字符的位数开始  
+//m是用户输入，n是要限制的位数  
+function issmall(m,n)  
+{  
+if ((m<n) && (m>0))  
+   {  
+   return(false);  
+   }  
+else  
+{return(true);}  
+}  
+  
+9. 判断密码是否输入一致  
+---------------------------------------      
+function issame(str1,str2)  
+{  
+if (str1==str2)  
+{return(true);}  
+else  
+{return(false);}  
+}  
+  
+10. 判断用户名是否为数字字母下滑线 
+---------------------------------------      
+function notchinese(str){ 
+var reg=/[^A-Za-z0-9_]/g 
+     if (reg.test(str)){ 
+     return (false); 
+     }else{ 
+return(true);     } 
+} 
+
+11. form文本域的通用校验函数
+---------------------------------------      
+作用：检测所有必须非空的input文本，比如姓名，账号，邮件地址等等。
+该校验现在只针对文本域，如果要针对form里面的其他域对象，可以改变判断条件。
+
+使用方法：在要检测的文本域中加入title文字。文字是在提示信息，你要提示给用户的该字段的中文名。比如要检测用户名
+html如下<input name="txt_1" title="姓名">,当然，最好用可视化工具比如dreamweaver什么的来编辑域。
+如果要检测数字类型数据的话，再把域的id统一为sz.
+javascript判断日期类型比较麻烦，所以就没有做日期类型校验的程序了.高手可以补充。
+
+程序比较草，只是提供一个思路。抛砖引玉！ ：）
+哦，对了，函数调用方法：< form   onsubmit="return dovalidate()">
+
+function dovalidate()
+{
+fm=document.forms[0] //只检测一个form,如果是多个可以改变判断条件
+     for(i=0;i<fm.length;i++)
+     {  
+     //检测判断条件，根据类型不同可以修改
+     if(fm[i].tagName.toUpperCase()=="INPUT" &&fm[i].type.toUpperCase()=="TEXT" && (fm[i].title!=""))
+    
+          if(fm[i].value="/blog/="")//
+          {
+          str_warn1=fm[i].title+"不能为空!";
+          alert(str_warn1);
+         fm[i].focus();
+          return false;         
+          }
+          if(fm[i].id.toUpperCase()=="SZ")//数字校验
+          {
+                  if(isNaN(fm[i].value))
+                 { str_warn2=fm[i].title+"格式不对";
+                 alert(str_warn2);
+                 fm[i].focus();
+                  return false;
+                  }
+         }
+     }
+     return true;
+}
+
+
+2 >表单提交验证类 
+
+
+2.1 表单项不能为空
+
+<script language="javascript">
+<!--
+function CheckForm()
+{ 
+if (document.form.name.value.length == 0) { 
+alert("请输入您姓名!");
+document.form.name.focus();
+return false;
+}
+return true;
+}
+-->
+</script>
+
+2.2 比较两个表单项的值是否相同
+
+<script language="javascript">
+<!--
+function CheckForm()
+if (document.form.PWD.value != document.form.PWD_Again.value) { 
+alert("您两次输入的密码不一样！请重新输入.");
+document.ADDUser.PWD.focus();
+return false;
+}
+return true;
+}
+-->
+</script>
+
+2.3 表单项只能为数字和"_",用于电话/银行帐号验证上,可扩展到域名注册等
+
+<script language="javascript">
+<!--
+function isNumber(String)
+{ 
+var Letters = "1234567890-"; //可以自己增加可输入值
+var i;
+var c;
+if(String.charAt( 0 )=='-')
+return false;
+if( String.charAt( String.length - 1 ) == '-' )
+return false;
+for( i = 0; i < String.length; i ++ )
+{ 
+c = String.charAt( i );
+if (Letters.indexOf( c ) < 0)
+return false;
+}
+return true;
+}
+function CheckForm()
+{ 
+if(! isNumber(document.form.TEL.value)) { 
+alert("您的电话号码不合法！");
+document.form.TEL.focus();
+return false;
+}
+return true;
+}
+-->
+</script>
+
+
+2.4 表单项输入数值/长度限定
+
+<script language="javascript">
+<!--
+function CheckForm() 
+{ 
+if (document.form.count.value > 100 || document.form.count.value < 1)
+{ 
+alert("输入数值不能小于零大于100!");
+document.form.count.focus();
+return false;
+}
+if (document.form.MESSAGE.value.length<10)
+{ 
+alert("输入文字小于10!");
+document.form.MESSAGE.focus();
+return false;
+}
+return true;
+}
+//-->
+</script>
+
+2.5 中文/英文/数字/邮件地址合法性判断
+
+<SCRIPT LANGUAGE="javascript">
+<!--
+
+function isEnglish(name) //英文值检测
+{ 
+if(name.length == 0)
+return false;
+for(i = 0; i < name.length; i++) { 
+if(name.charCodeAt(i) > 128)
+return false;
+}
+return true;
+}
+
+function isChinese(name) //中文值检测
+{ 
+if(name.length == 0)
+return false;
+for(i = 0; i < name.length; i++) { 
+if(name.charCodeAt(i) > 128)
+return true;
+}
+return false;
+}
+
+function isMail(name) // E-mail值检测
+{ 
+if(! isEnglish(name))
+return false;
+i = name.indexOf(" at ");
+j = name dot lastIndexOf(" at ");
+if(i == -1)
+return false;
+if(i != j)
+return false;
+if(i == name dot length)
+return false;
+return true;
+}
+
+function isNumber(name) //数值检测
+{ 
+if(name.length == 0)
+return false;
+for(i = 0; i < name.length; i++) { 
+if(name.charAt(i) < "0" || name.charAt(i) > "9")
+return false;
+}
+return true;
+}
+
+function CheckForm()
+{ 
+if(! isMail(form.Email.value)) { 
+alert("您的电子邮件不合法！");
+form.Email.focus();
+return false;
+}
+if(! isEnglish(form.name.value)) { 
+alert("英文名不合法！");
+form.name.focus();
+return false;
+}
+if(! isChinese(form.cnname.value)) { 
+alert("中文名不合法！");
+form.cnname.focus();
+return false;
+}
+if(! isNumber(form.PublicZipCode.value)) { 
+alert("邮政编码不合法！");
+form.PublicZipCode.focus();
+return false;
+}
+return true;
+}
+//-->
+</SCRIPT>
+
+2.6 限定表单项不能输入的字符
+
+<script language="javascript">
+<!--
+
+function contain(str,charset)// 字符串包含测试函数
+{ 
+var i;
+for(i=0;i<charset.length;i++)
+if(str.indexOf(charset.charAt(i))>=0)
+return true;
+return false;
+}
+
+function CheckForm()
+{ 
+if ((contain(document.form.NAME.value, "%\(\)><")) || (contain(document.form.MESSAGE.value, "%\(\)><")))
+{ 
+alert("输入了非法字符");
+document.form.NAME.focus();
+return false;
+}
+return true;
+}
+//-->
+</script>
+
+Kandy    发表于2009年
+
+做了一个javascript表单验证，个人觉得还可以。基本效果是获得焦点显示提示信息，失去焦点进行验证。
+
+1、用户名验证：匹配规则为4到16个字符（包括字母和数字）。代码如下：
+
+function isNumberOrLetter(s)//判断是否是数字或字母,用于验证用户名，失去焦点验证。
+            {
+           var regu = "^[0-9a-zA-Z]{4,16}$";
+           var re = new RegExp(regu);
+           if (!re.test(s)) 
+           {
+           document.getElementById ("userInf").innerHTML="用户名格式不对！";
+           document.getElementById ("userInf").style.color="red";
+           
+           }
+           else
+           {
+           document.getElementById ("userInf").innerHTML="用户名通过！";
+           document.getElementById ("userInf").style.color="green";
+            document.getElementById ("userIDCheck").innerHTML="";
+
+2、密码验证：规则为6到16个字符、下划线，第一个字符为字母。
+
+  
+
+   function validatorPassword(s)//验证规则为6到16数字、字母、下划线组成，首字母为字母，用于验证密码。
+               {
+                 regu="^[a-zA-Z][0-9a-zA-Z_]{5,15}$";
+                 re=new RegExp(regu);
+                if (!re.test(s)) 
+                {
+                   document.getElementById ("passwordInf").innerHTML="不对！";
+                   document.getElementById ("passwordInf").style.color="red";
+                }
+                else
+                {
+                  document.getElementById ("passwordInf").innerHTML="通过！";
+                  document.getElementById ("passwordInf").style.color="green";
+                  document.getElementById ("passwordCheck").innerHTML="";
+                }
+//               alert("6到16个数字、下划线和英文字符,第一个必须为字母,不区分字母大小写");
+               }
+
+3、密码确认：验证两次密码必须一致。
+
+    function passwordConfirm(s)//确认密码验证
+           {
+             if(s.toLowerCase()!=document.getElementById ("password").value.toLowerCase())
+             {
+                   document.getElementById ("confirmInf").innerHTML="密码不一致！";
+                   document.getElementById ("confirmInf").style.color="red";
+                
+             }
+             else
+             {
+                  document.getElementById ("confirmInf").innerHTML="通过！";
+                  document.getElementById ("confirmInf").style.color="green";
+                  document.getElementById ("confirmCheck").innerHTML="";
+             }
+//              alert("两次密码输入不一致");
+           }
+
+4、邮箱验证：
+
+    function isEmail(strEmail) //邮箱验证
+           {
+              if (strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) == -1)
+              {
+                 document.getElementById ("emailInf").innerHTML="格式不对！";
+                 document.getElementById ("emailInf").style.color="red";
+              }
+              else
+              {
+                  document.getElementById ("emailInf").innerHTML="通过！";
+                  document.getElementById ("emailInf").style.color="green";
+                  document.getElementById ("emailCheck").innerHTML="";
+              }
+//               alert("Email格式不正确！");
+               
+               
+//               document.formSignUp.email.value="";
+//               document.formSignUp.email.focus();
+           }
+
+5、身份证验证：包括15位和18位。
+
+   function idNumber(s)//身份证验证
+           {
+             regu1=/^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;//15wei
+             regu2=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/;//18wei
+             re1=new RegExp(regu1);
+             re2=new RegExp(regu2);
+             
+             if(!(re1.test(s)||re2.test(s)))
+             {
+                   document.getElementById ("idCardInf").innerHTML="格式不对！";
+                   document.getElementById ("idCardInf").style.color="red";
+                
+             }
+             else
+             {
+                  document.getElementById ("idCardInf").innerHTML="通过！";
+                  document.getElementById ("idCardInf").style.color="green";
+                  document.getElementById ("idCardCheck").innerHTML="";
+             }
+             
+//             alert("请正确填写18位或15位身份证号码");
+           }
+
+6、手机号码验证：13和15开头的号码。
+
+   function isMobileNO(s)//手机验证
+           {
+             var a = /^((\(\d{3}\))|(\d{3}\-))?13\d{9}|15\d{9}$/ ;
+           if( !s.match(a) )
+           {
+               document.getElementById ("mobileNOInf").innerHTML="格式不对！";
+               document.getElementById ("mobileNOInf").style.color="red";
+//                   alert("手机号码格式不对");
+           }
+           else
+           {
+                  document.getElementById ("mobileNOInf").innerHTML="通过！";
+                  document.getElementById ("mobileNOInf").style.color="green";
+                  document.getElementById ("mobileNOCheck").innerHTML="";
+           }
+           
+           }
+
+7、各表单域提示信息，获得焦点验证。
+
+      function displayInform(s)//注册信息规则提示信息（获得焦点验证）
+           {
+             if(s=="user")
+             document.getElementById ("userIDCheck").innerHTML="(用户名由4-16个数字或字母组成)";
+             if(s=="password")
+             document.getElementById ("passwordCheck").innerHTML="(密码由6-16个数字、字母、下划线组成，首字母必须是字母,不区分大小写)";
+             if(s=="passwordC")
+             document.getElementById ("confirmCheck").innerHTML="(两次密码输入必须一致)";
+             if(s=="idCard")
+             document.getElementById ("idCardCheck").innerHTML="(请输入正确的号码，以便你更容易找回密码)";
+             if(s=="mobileNO")
+             document.getElementById ("mobileNOCheck").innerHTML="(请输入正确的号码，以便你更快找回密码)";
+             if(s=="email")
+             document.getElementById ("emailCheck").innerHTML="(请输入正确的邮箱地址，以便你更容易找回密码)";
+             
+           }
+
+8、表单提交验证：先对必填项进行非空验证，再进行匹配验证。
+
+    function submitValidator() //提交验证
+          {
+            if(document.getElementById("control").style.display=="inline")
+            {
+                if((document.getElementById ("user").value=="")||(document.getElementById("password").value=="")||(document.getElementById("passwordC").value=="")||(document.getElementById("answer").value=="")||(document.getElementById("question").value==""))
+               {
+                  alert("必填项不能为空！");
+                   return false;
+                }
+                else
+               {
+                  if((document.getElementById ("user").value).match(/^[0-9a-zA-Z]{4,16}$/)&&(document.getElementById("password").value).match(/^[a-zA-Z][0-9a-zA-Z_]{5,15}$/)&&
+                  (document.getElementById ("password").value.toLowerCase()==document.getElementById ("passwordC").value.toLowerCase()))
+                  {return true;}
+                  else
+                  {alert("输入格式不对");return false;}
+                }
+            }
+            else
+            {
+               if((document.getElementById ("user").value=="")||(document.getElementById("password").value=="")||(document.getElementById("passwordC").value=="")||(document.getElementById("answer").value==""))
+               {
+                  alert("必填项不能为空！");
+                   return false;
+                }
+                else
+               {
+                  if((document.getElementById ("user").value).match(/^[0-9a-zA-Z]{4,16}$/)&&(document.getElementById("password").value).match(/^[a-zA-Z][0-9a-zA-Z_]{5,15}$/)&&
+                  (document.getElementById ("password").value.toLowerCase()==document.getElementById ("passwordC").value.toLowerCase()))
+                  {return true;}
+                  else
+                  {alert("输入格式不对");return false;}
+                }
+            }
+
+ 
+
+本文来自CSDN博客，转载请标明出处：http://blog.csdn.net/diershi/archive/2009/04/16/4084981.aspx
+
+JS表单验证
+
+<script language="JavaScript"> 
+/* 
+*--------------- 客户端表单通用验证CheckForm(oForm) ----------------- 
+* 功能:通用验证所有的表单元素. 
+* 使用: 
+*    <form name="form1" onsubmit="return CheckForm(this)"> 
+*    <input type="text" name="id" check="^\S+$" warning="id不能为空,且不能含有空格"/> 
+*    <input type="submit"/> 
+*    </form> 
+* author:wanghr100(灰豆宝宝.net) 
+* email:wanghr100@126.com 
+* update:19:28 2004-8-23 
+* 注意:写正则表达式时一定要小心.不要让"有心人"有空子钻. 
+* 已实现功能: 
+* 对text,password,hidden,file,textarea,select,radio,checkbox进行合法性验证 
+* 待实现功能:把正则表式写成个库. 
+*--------------- 客户端表单通用验证CheckForm(oForm) ----------------- 
+*/ 
+//////////////////////////////////////////////////////////////////////////////// 
+
+//主函数 
+function CheckForm(oForm) 
+{ 
+    var els = oForm.elements; 
+    //遍历所有表元素 
+    for(var i=0;i<els .length;i++) 
+    { 
+        //是否需要验证 
+        if(els.check) 
+        { 
+            //取得验证的正则字符串 
+            var sReg = els.check; 
+            //取得表单的值,用通用取值函数 
+            var sVal = GetValue(els); 
+            //字符串->正则表达式,不区分大小写 
+            var reg = new RegExp(sReg,"i"); 
+            if(!reg.test(sVal)) 
+            { 
+                //验证不通过,弹出提示warning 
+                alert(els.warning); 
+                //该表单元素取得焦点,用通用返回函数 
+                GoBack(els)   
+                return false; 
+            } 
+        } 
+    } 
+} 
+
+//通用取值函数分三类进行取值 
+//文本输入框,直接取值el.value 
+//单多选,遍历所有选项取得被选中的个数返回结果"00"表示选中两个 
+//单多下拉菜单,遍历所有选项取得被选中的个数返回结果"0"表示选中一个 
+function GetValue(el) 
+{ 
+    //取得表单元素的类型 
+    var sType = el.type; 
+    switch(sType) 
+    { 
+        case "text": 
+        case "hidden": 
+        case "password": 
+        case "file": 
+        case "textarea": return el.value; 
+        case "checkbox": 
+        case "radio": return GetValueChoose(el); 
+        case "select-one": 
+        case "select-multiple": return GetValueSel(el); 
+    } 
+    //取得radio,checkbox的选中数,用"0"来表示选中的个数,我们写正则的时候就可以通过0{1,}来表示选中个数 
+    function GetValueChoose(el) 
+    { 
+        var sValue = ""; 
+        //取得第一个元素的name,搜索这个元素组 
+        var tmpels = document.getElementsByName(el.name); 
+        for(var i=0;i<tmpels .length;i++) 
+        { 
+            if(tmpels.checked) 
+            { 
+                sValue += "0"; 
+            } 
+        } 
+        return sValue; 
+    } 
+    //取得select的选中数,用"0"来表示选中的个数,我们写正则的时候就可以通过0{1,}来表示选中个数 
+    function GetValueSel(el) 
+    { 
+        var sValue = ""; 
+        for(var i=0;i<el.options.length;i++) 
+        { 
+            //单选下拉框提示选项设置为value="" 
+            if(el.options.selected && el.options.value!="") 
+            { 
+                sValue += "0"; 
+            } 
+        } 
+        return sValue; 
+    } 
+} 
+
+//通用返回函数,验证没通过返回的效果.分三类进行取值 
+//文本输入框,光标定位在文本输入框的末尾 
+//单多选,第一选项取得焦点 
+//单多下拉菜单,取得焦点 
+function GoBack(el) 
+{ 
+    //取得表单元素的类型 
+    var sType = el.type; 
+    switch(sType) 
+    { 
+        case "text": 
+        case "hidden": 
+        case "password": 
+        case "file": 
+        case "textarea": el.focus();var rng = el.createTextRange(); rng.collapse(false); rng.select(); 
+        case "checkbox": 
+        case "radio": var els = document.getElementsByName(el.name);els[0].focus(); 
+        case "select-one": 
+        case "select-multiple":el.focus(); 
+    } 
+} 
+</script> 
+通用表单函数测试: 
+<form name="form1" onsubmit="return CheckForm(this)"> 
+test:<input type="text" name="test"/>不验证<br /> 
+账号:<input type="text" check="^\S+$" warning="账号不能为空,且不能含有空格" name="id"/>不能为空<br /> 
+密码:<input type="password" check="\S{6,}" warning="密码六位以上" name="id"/>六位以上<br /> 
+电话:<input type="text" check="^\d+$" warning="电话号码含有非法字符" name="number" value=""/><br /> 
+相片上传:<input type="file" check="(.*)(\.jpg|\.bmp)$" warning="相片应该为JPG,BMP格式的" name="pic" value="1"/><br /> 
+出生日期:<input type="text" check="^\d{4}\-\d{1,2}-\d{1,2}$" warning="日期格式2004-08-10"  name="dt" value=""/>日期格式2004-08-10<br /> 
+省份: 
+<select name="sel" check="^0$" warning="请选择所在省份"> 
+<option value="">请选择 
+</option><option value="1">福建省 
+</option><option value="2">湖北省 
+</option></select> 
+<br /> 
+选择你喜欢的运动:<br /> 
+游泳<input type="checkbox" name="c" check="^0{2,}$" warning="请选择2项或以上"/> 
+篮球<input type="checkbox" name="c"/> 
+足球<input type="checkbox" name="c"/> 
+排球<input type="checkbox" name="c"/> 
+<br /> 
+你的学历: 
+大学<input type="radio" name="r" check="^0$" warning="请选择一项学历"/> 
+中学<input type="radio" name="r"/> 
+小学<input type="radio" name="r"/> 
+<br /> 
+个人介绍: 
+<textarea name="txts" check="^[\s|\S]{20,}$" warning="个人介绍不能为空,且不少于20字"></textarea>20个字以上 
+<input type="submit"/> 
+</form>

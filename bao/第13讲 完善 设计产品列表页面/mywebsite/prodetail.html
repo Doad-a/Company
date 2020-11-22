@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>产品详细介绍</title>
+
+<link rel="stylesheet" type="text/css" href="basic.css"/>
+<style type="text/css">
+
+#prolistleft{ width:250px; float:left;  border:solid 1px #ccc; }
+#prolistright{ width:830px; float:left;   margin-left:20px;}
+#box1{}
+#box1 h1{ background:#363601; height:35px; line-height:35px; font-size:18px; color:#fff; text-indent:20px;}
+#box1 ul{ list-style:none;}
+#box1 ul li{ background:#DBDDE6; line-height:35px; border-bottom:#FFF; border-bottom-style:solid; border-width:1px;text-indent:20px;}
+
+#box2{}
+#box2 h1{ background:#363601; height:35px; line-height:35px; font-size:18px; color:#fff; text-indent:20px;}
+#box2 ul{ list-style:none;}
+#box2 ul li{ list-style:inside;  line-height:25px; border-bottom:#FFF; border-bottom-style:solid; border-width:1px;text-indent:20px;}
+
+
+#box3{}
+#box3 h1{ background:#363601; height:35px; line-height:35px; font-size:18px; color:#fff; text-indent:20px;}
+#box3 ul{ list-style:none;}
+#box3 ul li{ background:#DBDDE6; line-height:35px; border-bottom:#FFF; border-bottom-style:solid; border-width:1px;text-indent:20px;}
+
+.topimg{ padding:10px; border-right:none; border-bottom:dotted 1px #333333; margin-bottom:10px;}
+#prolist { border:solid 1px #eee;}
+#prolist ul{ list-style:none; width:830px;}
+#prolist ul li{ display:inline-block;  }
+</style>
+
+<script type="text/javascript">
+ 
+ //显示元素标签
+ function showobj(id)
+ {
+	 
+var obj=	 document.getElementById(id);
+obj.style.display="";
+}
+	 
+	  //隐藏元素标签
+function hiddenobj(id)
+
+{
+	var obj=document.getElementById(id);
+       obj.style.display="none";
+	
+} 
+ 
+ //实例化一个数组，用于存放图片路径
+ var arr=new Array;
+ arr[0]="images/banner1.jpg";
+ arr[1]="images/banner2.jpg";
+ arr[2]="images/banner3.jpg";
+ arr[3]="images/banner4.jpg";
+ 
+ var count=0;
+ //切换图片的功能
+ function autoPlayer()
+ {
+	 if(arr.length==count)
+	 count=0;
+     document.getElementById("banner1").src=arr[count];
+     count++;
+}
+ 
+ var Timer=setInterval(autoPlayer,2000);
+ 
+ //清楚定时器对象
+ function clearTimer()
+ {
+	 clearInterval(Timer);
+	 
+}
+//鼠标悬停时候指定播放的图片
+ function showbannerbyid(num)
+ {
+	 clearTimer();
+	 var index=parseInt(num);
+	 
+	  document.getElementById("banner1").src=arr[index-1];
+	  count=index;
+ }
+ 
+ 
+ //鼠标离开恢复自动播放效果
+  function btnMouseOut()
+ {
+	 Timer=setInterval(autoPlayer,2000);
+ }
+ 
+ 
+ 
+ //实现浮动广告的特效
+ function changehight()
+ {
+ 	var QQ= document.getElementById("zixunbox");
+	//alert(document.documentElement.scrollTop);
+	 QQ.style.top=document.documentElement.scrollTop+document.body.scrollTop+200+"px";
+}
+ 
+ window.onscroll=changehight;
+</script>
+
+</head>
+
+<body>
+
+<div id="mainbox">
+<!--在线咨询-->
+<div id="zixunbox"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=123456789&amp;site=www.maiziedu.com&amp;menu=yes"><img src="images/services.jpg" width="104"  height="144" /></a></div>
+
+<!--上面容器-->
+    <div id="topbox">
+    
+       <!--logo-->
+       <div id="logo" style="position:relative;">
+         <div class="logo1" ><img src="images/新智达logo1副本.png"  width="120" height="60"/></div>
+         <div class="logofont"><span class="logospan">成都新智达智能家居公司</span></div>
+         <div style="position:absolute;bottom:15px; right:10px;"><img src="images/top.jpg" /></div>
+         <div id="setindex">
+             <ul>
+              <li><a href="#">设为首页</a></li>
+              <li><a href="#">|</a></li>
+              <li><a href="#">联系我们</a></li>
+             </ul>
+         </div>
+       </div>
+       <!--menu-->
+       <div id="mainmenu" style=" position:relative;">
+        <div id="nav">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">关于我们</a></li>
+                <li onmouseover="showobj('nav1')" onmouseout="hiddenobj('nav1')"><a href="">新闻资讯</a></li>
+                <li><a href="">产品介绍</a></li>
+                <li><a href="">解决方案</a></li>
+                <li><a href="">体验中心</a></li>
+                <li><a href="">成功案例</a></li>
+                <li><a href="">加盟合作</a></li>
+                <li><a href="">资料下载</a></li>
+                <li ><a href="">联系我们</a></li>
+            </ul>
+        
+        </div>
+        
+        <div id="nav1" style=" z-index:1000; position:absolute; top:44px; left:175px; display:none" onmouseover="showobj('nav1')" onmouseout="hiddenobj('nav1')">
+         <ul>
+            <li><a href="">公司新闻</a></li>
+            <li><a href="">行业新闻</a></li>
+            <li><a href="">国内新闻</a></li>
+         </ul>
+        </div>
+       
+       </div>
+       
+    </div>
+    
+    <!--banner广告-->
+    <div id="bannerbox" style="position:relative;">
+       <div>
+          <img src="images/banner1.jpg" width="1113"  id="banner1"/>
+       </div>
+       <div id="spanbtn" style=" position:absolute; right:10px; bottom:10px;">
+         <span onmouseover="showbannerbyid(1)"  onmouseout="btnMouseOut()">1</span> <span onmouseover="showbannerbyid(2)" onmouseout="btnMouseOut()">2</span> <span onmouseover="showbannerbyid(3)" onmouseout="btnMouseOut()">3</span> <span onmouseover="showbannerbyid(4)" onmouseout="btnMouseOut()">4</span>
+       </div>
+    </div>
+    
+    <!--中间容器-->
+    <div id="middlebox" style=" background:#FFF; min-height:800px;">
+            <div id="prolistleft">
+            
+            <div id="box1">
+             <h1>企业导航</h1>
+             <div>
+              <ul>
+                <li><a href="#">公司简介</a></li>
+                <li><a href="#">服务流程</a></li>
+                <li><a href="#">服务承诺</a></li>
+                <li><a href="#">服务宗旨</a></li>   
+              </ul>
+             </div>
+            
+            </div>
+            
+               <div id="box2">
+               
+                <h1>新闻动态</h1>
+                     <div>
+                      <ul>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>   
+                         <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>   
+                      </ul>
+                     </div>
+            
+            </div>
+            
+               <div id="box3">
+               
+               
+                 <h1>产品分类</h1>
+                     <div>
+                      <ul>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>   
+                         <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>
+                        <li><a href="#">测试测测试测试试</a></li>   
+                      </ul>
+                     </div>
+            
+                </div>
+            
+            
+            </div>
+            
+            <div id="prolistright">
+             <div id="topimg" class="topimg"><img src="images/Product.jpg" /></div>
+             <div id="topcontent">
+             <div style="background:url(images/lv-left.gif); height:30px; line-height:30px; text-indent:10px;">产品展示</div>
+             <div id="prodetail">
+               <div  style="border-bottom:dotted 1px #ccc">
+                   <div  style="text-align:center; color:#F00; font-weight:bold; line-height:35px;">卓居智能创新使用二维码标识产品</div>
+                   <div  style="text-align:center; font-size:10px;">作者：seekii.wang 来源：本站 发表时间：2012-3-18 22:33:58 点击：1899</div>
+               </div>
+               <div style="text-align:center">
+               <img src="images/T2hRyIXmFXXXXXXXXX_!!858542137.jpg"   height="600"/>
+               
+               </div>
+             
+             
+             </div>
+             
+             
+             </div>
+            
+            
+            </div>
+              
+    
+    
+    </div>
+    
+    
+     <!--底部容器-->
+    <div id="bottomox" style="clear:both;">
+     
+       <div id="bbox">
+        <div>地址：成都市人民中路一段26号2楼 电话：028-88888888,028-66666666 邮箱：524270754@qq.com; 新智达文化传播有限公司</div>
+        <div>CopyRight 2015 All right reserved ICP 备案号 蜀1234567</div>
+      </div>
+    
+     
+    </div>
+
+</div>
+</body>
+</html>

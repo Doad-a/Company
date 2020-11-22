@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script type="text/javascript" src="JS/index.js"></script>
+    <title>标题</title>
+</head>
+<body>
+<!-- 在线咨询 -->
+<div id="zixun">
+   <div id="zixun1" style="position: relative;">
+     <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1520659533&amp;site=www.maiziedu.com&amp;menu=yes"><img src="images/services.png" width="144" height="144"/></a>
+     <span id="zixunspan">在线咨询</span>
+   </div> 
+</div>
+
+
+<div id="mainbox">
+   <!--上面容器-->
+   <div id="topbox">
+      
+      <!--logo-->
+      <div id="logo" style="position: relative;">
+         <div class="logo1"><img src="images/新智达logo1副本.png" width="120" height="60"/></div>
+         <div class="logofont"><span class="logospan">成都新智达智能家居公司</span></div>
+         <div class="topimages"><img src="images/top.jpg"/></div>
+         <div id="setindex">
+            <ul>
+               <li><a href="">设为首页</a></li>
+               <li><span>|</span></li>
+               <li><a href="">联系我们</a></li>
+            </ul>
+         </div>
+      </div>
+      <!--menu-->
+      <div id="mianmenu" style="position: relative;">
+         <div id="nav">
+               <ul>
+                  <li><a href="index.html">首页</a></li>
+                  <li><a href="about.html">关于我们</a></li>
+                  <li onmouseover="showobj('nav1')" onmouseout="hiddenobj('nav1')"><a href="newlist.html">新闻资讯</a></li>
+                  <li><a href="prolist.html">产品介绍</a></li>
+                  <li><a href="jiejuefangan.html">解决方案</a></li>
+                  <li><a href="#">体验中心</a></li>
+                  <li><a href="success.html">成功案例</a></li>
+                  <li><a href="#">加盟合作</a></li>
+                  <li><a href="#">资料下载</a></li>
+                  <li><a href="linkus.html">联系我们</a></li>
+               </ul>
+         </div>
+         <!--二级菜单-->
+         <div id="nav1" onmouseover="showobj('nav1')" onmouseout="hiddenobj('nav1')" >
+            <ul>
+               <li><a href="#">公司新闻</a></li>
+               <li><a href="#">行业新闻</a></li>
+               <li><a href="#">国内新闻</a></li>
+            </ul>
+
+         </div>
+      </div>               
+   </div>
+   <!--nav end-->
+   
+   <!--banner start-->
+   <!--focus_width=960即高度等于960-->
+   <div class="w960" id="banner">
+   <script type="text/javascript" >
+         var focus_width=1113      //width=1113px
+         var focus_height=450     //height=450
+         var text_height=0
+         var swf_height = focus_height+text_height
+         var pics='images/banner1.jpg|images/banner2.jpg|images/banner3.jpg|images/banner4.jpg'
+         var links='||'
+         var texts='||'
+         document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
+         //  下一行中的value="JS/pixviewer.swf"表示flash的位置，位置一样才可以启动
+         document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="JS/pixviewer.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">');
+         document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+         document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');
+         //  下一行中的value="JS/pixviewer.swf"表示flash的位置，位置一样才可以启动
+         document.write('<embed src="JS/pixviewer.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" bgcolor="#ffffff" quality="high" width="'+ focus_width +'" height="'+ swf_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+         document.write('</object>');
+   </script>
+   </div>
+   <!--banner end-->
+
+
+   <!--banner2 start开始-->
+   <!-- <div id="bannerbox" style="position: relative;">
+      <div>
+         <img src="images/banner1.jpg" width="1113" id="banner1"/>
+      </div>
+      <div id="spanbtn">
+         <span onmouseover="showbannerById(1)" onmouseout="btnmouseOut(1)">1</span>
+         <span onmouseover="showbannerById(2)" onmouseout="btnmouseOut(2)">2</span>
+         <span onmouseover="showbannerById(3)" onmouseout="btnmouseOut(3)">3</span>
+         <span onmouseover="showbannerById(4)" onmouseout="btnmouseOut(4)">4</span>
+      </div>
+   </div> -->
+
+   <!--banner2 end结束-->
+   
+   <!--中间容器-->
+   <div id="middlebox">
+         <!--中间上面部分-->
+      <div id="midtop">
+            <!-- 1号框内部分开始 -->
+            <div id="newsbox" class="topleft" style="margin-left: 4px;">
+               <!-- 框内标题部分 -->
+               <div class="toptitle">
+                  <!-- 标题内的文字部分 -->
+                  <div class="titlecontent">
+                     <span>新闻动态  News</span>
+                  </div>
+                  <!-- 标题内文字部分结束 -->
+               </div>
+               <!-- 标题部分结束 -->
+               <!-- 框内内容部分 -->
+               <div class="toplist">
+                  <div class="titleimg"><img src="images/newsimg.jpg"/></div>
+                  <ul class="newslist">
+                     <li>文字文字文字文字</li>
+                     <li>文字文字文字文字</li>
+                     <li>文字文字文字文字</li>
+                     <li>文字文字文字文字</li>
+                  </ul>
+               </div>
+               <!-- 框内内容部分结束 -->
+            </div>
+            <!-- 1号框内部分结束 -->
+
+
+
+            <!-- 2号框内部分开始 -->
+            <div id="companybox">
+            <!-- 框内标题部分 -->
+            <div class="toptitle">
+               <!-- 标题内的文字部分 -->
+               <div class="titlecontent">
+                  <span>公司动态  Company</span>
+               </div>
+               <!-- 标题内文字部分结束 -->
+            </div>
+            <!-- 标题部分结束 -->
+            <!-- 框内内容部分 -->
+            <div class="toplist">
+               <div class="titleimg" style="margin-top: 0px;"><img src="images/companyimg.jpg"/></div>
+               <div>
+                  <span id="Comjianjie">
+                     新智达有限公司位于成都市高新区--成都市软件产业园。新智达科技有<br>
+                     限公司是以智能家居产品研发和销售为主的高科技企业。新智达的所有<br>
+                     产品均通过国家权威部门的检测，高于国家对电工电子产品质量和安全<br>
+                     的认证要求。......
+                  </span>
+               </div>
+            </div>
+            <!-- 框内内容部分结束 -->
+         </div>
+         <!-- 2号框内部分结束 -->
+         
+         
+         
+         <!-- 3号框内部分开始 -->
+            <div id="linkbox" class="topleft">
+            <!-- 框内标题部分 -->
+            <div class="toptitle">
+               <!-- 标题内的文字部分 -->
+               <div class="titlecontent">
+                  <span>联系我们  Contact us</span>
+               </div>
+               <!-- 标题内文字部分结束 -->
+            </div>
+            <!-- 标题部分结束 -->
+            <!-- 框内内容部分 -->
+            <div class="toplist">
+               <div class="titleimg"><img src="images/Contactimg.jpg"/></div>
+               <ul class="linklist">
+                  <li>文字文字文字文字</li>
+                  <li>文字文字文字文字</li>
+                  <li>文字文字文字文字</li>
+                  <li>文字文字文字文字</li>
+                  <li>文字文字文字文字</li>
+                  <li>文字文字文字文字</li>
+               </ul>
+            </div>
+            <!-- 框内内容部分结束 -->
+         </div>
+         <!--3号框内部分结束 -->
+      </div>
+
+      <!--中间下面部分-->
+
+      
+      <div id="midbottom">
+         <!-- 左边部分开始 -->
+         <div id="midbtnleft" class="topleft" style="height: 316px;">
+            <div class="titlecontent">
+               <span>视频中心  Vedio</span>
+            </div>
+            <div style="margin: 20px auto;">
+               <embed src="http://player.youku.com/player.php/sid/XNTI5MjI1MDI4/v.swf" allowfullscreen="true" quality="high" width="325" height="200" align="middle" allowscriptaccess="always" type="application/x-shockwave-flash">
+            </div>
+         </div>
+         <!-- 左边部分结束 -->
+
+         <!-- 无缝滚动开始 -->
+         <div id="midbtnright" class="midright">
+            <div class="titlecontent">
+               <span>产品展示  Product display</span>
+            </div>
+            <div id="demo">
+               <div id="indemo">
+                  <div id="demo1">
+                     <!-- 这是一个盒子模型 -->
+                     <div class="floatleft"> 
+                        <!-- 存放图片的DIV -->
+                        <div>
+                          <a href="#"><img src="images/chanpin.jpg"/></a>
+                        </div>
+                        <!-- 图片div结束 -->
+ 
+                        <!-- 存放文字的div -->
+                        <div>
+                           <span>这是一个电脑</span>
+                        </div> 
+                        <!-- 文字div结束  -->
+                     </div>
+                     <!-- 盒子模型结束 -->
+
+                     <!-- 这是一个盒子模型 -->
+                     <div class="floatleft"> 
+                        <!-- 存放图片的DIV -->
+                        <div>
+                          <a href="#"><img src="images/chanpin.jpg"/></a>
+                        </div>
+                        <!-- 图片div结束 -->
+
+                        <!-- 存放文字的div -->
+                        <div>
+                           <span>这是一个电脑</span>
+                        </div> 
+                        <!-- 文字div结束  -->
+                     </div>
+                     <!-- 盒子模型结束 -->
+
+
+                     <!-- 这是一个盒子模型 -->
+                     <div class="floatleft"> 
+                        <!-- 存放图片的DIV -->
+                        <div>
+                          <a href="#"><img src="images/chanpin.jpg"/></a>
+                        </div>
+                        <!-- 图片div结束 -->
+
+                        <!-- 存放文字的div -->
+                        <div>
+                           <span>这是一个电脑</span>
+                        </div> 
+                        <!-- 文字div结束  -->
+                     </div>
+                     <!-- 盒子模型结束 -->
+
+
+
+
+                     <!-- 这是一个盒子模型 -->
+                     <div class="floatleft"> 
+                        <!-- 存放图片的DIV -->
+                        <div>
+                          <a href="#"><img src="images/chanpin.jpg"/></a>
+                        </div>
+                        <!-- 图片div结束 -->
+
+                        <!-- 存放文字的div -->
+                        <div>
+                           <span>这是一个电脑</span>
+                        </div> 
+                        <!-- 文字div结束  -->
+                     </div>
+                     <!-- 盒子模型结束 -->
+
+
+
+
+                     <!-- 这是一个盒子模型 -->
+                     <div class="floatleft"> 
+                        <!-- 存放图片的DIV -->
+                        <div>
+                          <a href="#"><img src="images/chanpin.jpg"/></a>
+                        </div>
+                        <!-- 图片div结束 -->
+
+                        <!-- 存放文字的div -->
+                        <div>
+                           <span>这是一个电脑</span>
+                        </div> 
+                        <!-- 文字div结束  -->
+                     </div>
+                     <!-- 盒子模型结束 -->
+
+
+
+
+                     <!-- 这是一个盒子模型 -->
+                     <div class="floatleft"> 
+                        <!-- 存放图片的DIV -->
+                        <div>
+                          <a href="#"><img src="images/chanpin.jpg"/></a>
+                        </div>
+                        <!-- 图片div结束 -->
+
+                        <!-- 存放文字的div -->
+                        <div>
+                           <span>这是一个电脑</span>
+                        </div> 
+                        <!-- 文字div结束  -->
+                     </div>
+                     <!-- 盒子模型结束 -->
+                  </div>
+                  <div id="demo2"></div>
+               </div>
+            </div>
+            <script language="javascript" src="JS/gundong.js"></script>
+
+         </div>
+      </div>
+      <!-- 中间下面部分结束 -->
+   </div>
+   <!-- 中间部分结束 -->
+   
+      <!--底部容器-->
+   <div id="bottomox" style="    margin-bottom: 20px;">
+      <div id="bbox">
+         <div>地址:成都青羊区人民中路一段26号; 电话:028-66666668 传真:028-66666668 邮箱：524270754@qq.com</div>
+         <div>JOYRILL 新智达有限公司 版权所有 Copyright @2015 All rights reserved. ICP 备案号:蜀ICP备1234567</div>
+      </div>
+   </div>
+   <!-- 底部容器结束 -->
+
+</div>
+<!-- mainbox整体结束 -->
+</body>
+</html>

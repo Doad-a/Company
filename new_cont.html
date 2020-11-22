@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/new_cont.css">
+    <script type="text/javascript" src="JS/index.js"></script>
+    <title>标题</title>
+</head>
+<body>
+<!-- 在线咨询 -->
+<div id="zixun">
+   <div id="zixun1" style="position: relative;">
+     <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1520659533&amp;site=www.maiziedu.com&amp;menu=yes"><img src="images/services.png" width="144" height="144"/></a>
+     <span id="zixunspan">在线咨询</span>
+   </div> 
+</div>
+
+
+<div id="mainbox">
+   <!--上面容器-->
+   <div id="topbox">
+      
+      <!--logo-->
+      <div id="logo" style="position: relative;">
+         <div class="logo1"><img src="images/新智达logo1副本.png" width="120" height="60"/></div>
+         <div class="logofont"><span class="logospan">成都新智达智能家居公司</span></div>
+         <div class="topimages"><img src="images/top.jpg"/></div>
+         <div id="setindex">
+            <ul>
+               <li><a href="">设为首页</a></li>
+               <li><span>|</span></li>
+               <li><a href="">联系我们</a></li>
+            </ul>
+         </div>
+      </div>
+      <!--menu-->
+      <div id="mianmenu" style="position: relative;">
+         <div id="nav">
+               <ul>
+                  <li><a href="index.html">首页</a></li>
+                  <li><a href="about.html">关于我们</a></li>
+                  <li onmouseover="showobj('nav1')" onmouseout="hiddenobj('nav1')"><a href="newlist.html">新闻资讯</a></li>
+                  <li><a href="prolist.html">产品介绍</a></li>
+                  <li><a href="jiejuefangan.html">解决方案</a></li>
+                  <li><a href="#">体验中心</a></li>
+                  <li><a href="success.html">成功案例</a></li>
+                  <li><a href="#">加盟合作</a></li>
+                  <li><a href="#">资料下载</a></li>
+                  <li><a href="linkus.html">联系我们</a></li>
+               </ul>
+         </div>
+         <!--二级菜单-->
+         <div id="nav1" onmouseover="showobj('nav1')" onmouseout="hiddenobj('nav1')" >
+            <ul>
+               <li><a href="#">公司新闻</a></li>
+               <li><a href="#">行业新闻</a></li>
+               <li><a href="#">国内新闻</a></li>
+            </ul>
+
+         </div>
+      </div>               
+   </div>
+   <!--nav end-->
+   
+   <!--banner start-->
+   <!--focus_width=960即高度等于960-->
+   <div class="w960" id="banner">
+   <script type="text/javascript" >
+         var focus_width=1113      //width=1113px
+         var focus_height=450     //height=450
+         var text_height=0
+         var swf_height = focus_height+text_height
+         var pics='images/banner1.jpg|images/banner2.jpg|images/banner3.jpg|images/banner4.jpg'
+         var links='||'
+         var texts='||'
+         document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
+         //  下一行中的value="JS/pixviewer.swf"表示flash的位置，位置一样才可以启动
+         document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="JS/pixviewer.swf"><param name="quality" value="high"><param name="bgcolor" value="#ffffff">');
+         document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+         document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');
+         //  下一行中的value="JS/pixviewer.swf"表示flash的位置，位置一样才可以启动
+         document.write('<embed src="JS/pixviewer.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" bgcolor="#ffffff" quality="high" width="'+ focus_width +'" height="'+ swf_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+         document.write('</object>');
+   </script>
+   </div>
+   <!--banner end-->
+
+
+   <!--banner2 start开始-->
+
+   <!-- <div id="bannerbox" style="position: relative;"> -->
+      <!--图片部分开始-->
+      <!-- <div> -->
+         <!-- <img src="images/banner1.jpg" width="1113" id="banner1"/> -->
+      <!-- </div> -->
+      <!--按钮链接-->
+      <!-- <div id="spanbtn"> -->
+         <!-- <span onmouseover="showbannerById(1)" onmouseout="btnmouseOut(1)">1</span> -->
+         <!-- <span onmouseover="showbannerById(2)" onmouseout="btnmouseOut(2)">2</span> -->
+         <!-- <span onmouseover="showbannerById(3)" onmouseout="btnmouseOut(3)">3</span> -->
+         <!-- <span onmouseover="showbannerById(4)" onmouseout="btnmouseOut(4)">4</span> -->
+      <!-- </div> -->
+   <!-- </div> -->
+
+   <!--banner2 end结束-->
+   
+   <!--中间容器-->
+   <div id="middlebox" style=" clear: both; overflow: hidden;">
+      <!-- 左边部分开始 -->
+      <div id="prolistleft">
+         <div id="box1">
+            <h1>企业导航</h1>
+            <div>
+               <ul>
+                  <li><a href="">公司介绍</a></li>
+                  <li><a href="">服务流程</a></li>
+                  <li><a href="">服务承诺</a></li>
+                  <li><a href="">服务宗旨</a></li>
+               </ul>
+            </div>
+         </div>
+
+         <!-- 第二个盒子 -->
+         <div id="box2">
+            <h1>新闻动态</h1>
+            <div>
+               <ul>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+               </ul>
+            </div>
+         </div>
+
+         <!-- 第三个盒子 -->
+         <div id="box3">
+            <h1>产品分类</h1>
+            <div>
+               <ul>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+                  <li><a href="">测试的测试额的</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- 左边部分结束 -->
+
+      <!-- 右边部分开始 -->
+      <div id="prolistright">
+         <div id="rightimg" class="rightimg">
+            <img src="images/news-1.jpg"/>
+         </div>
+         <div id="rightcontent">
+            <div id="chanpinlist">
+              <span>公司新闻</span>  
+            </div>
+            <div id="prolist">
+                <div id="protext">
+                    <h4>安卓智能创新使用二维码表示产品</h4>
+                    <p>
+                      作者：坐拥星辰" 来源：本地 发布时间：2020-2-17 点击：0
+                    </p>
+                </div>
+                <div id="newtext">
+                    价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵
+                    师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡
+                    的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价
+                    格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地
+                    工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    <p>商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商
+                    价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵
+                    师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡
+                    的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价
+                    格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地
+                    工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    </p>
+                    <p>
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商
+                    价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵
+                    师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡
+                    的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价
+                    格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地
+                    工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工商
+                    </p>
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    商价格卡卡的死灵法师当地工商价格卡卡的死灵法师当地工
+                    价格卡卡的死灵法师当地工商
+                </div>
+            </div>
+          </div>
+      </div>
+      <!-- 右边部分结束 -->
+   </div>
+   <!-- 中间部分结束 -->
+   
+      <!--底部容器-->
+   <div id="bottomox" style="margin-bottom: 20px; clear: both;">
+      <div id="bbox">
+         <div>地址:成都青羊区人民中路一段26号; 电话:028-66666668 传真:028-66666668 邮箱：524270754@qq.com</div>
+         <div>JOYRILL 新智达有限公司 版权所有 Copyright @2015 All rights reserved. ICP 备案号:蜀ICP备1234567</div>
+      </div>
+   </div>
+   <!-- 底部容器结束 -->
+
+</div>
+<!-- mainbox整体结束 -->
+</body>
+</html>

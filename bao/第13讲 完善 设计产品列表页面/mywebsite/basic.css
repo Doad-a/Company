@@ -1,0 +1,53 @@
+#mainbox{
+  
+   width:1113px;
+   
+   margin:0px auto;
+	}
+	body{ background:url(images/bj.gif);}
+
+ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
+ a{ text-decoration:none;}
+#logo{ height:95px; line-height:95px}
+.logo1{ width:120px; float:left; position:absolute; bottom:10px;}
+.logofont{position:absolute; bottom:15px; left:122px;}
+.logospan{font-size:20px;float:left; width:300px; font-weight:bold; height:60px; color:#C30 ; font-family:'黑体';}
+#nav{ background:url(images/navbj.jpg) repeat-x; line-height:44px; }
+#nav ul{ list-style:none; display:inline;}
+#nav ul li{   display:inline-block; background:url(images/navimg.jpg) no-repeat center right; width:80px; text-align:center; font-size:16px; font-weight:bold; line-height:44px; }
+#nav1{}
+#nav1 ul{ list-style:none;}
+#nav1 ul li{ width:80px; line-height:30px; border:#960 1px solid; background:#F90; font-size:12px; text-align:center;}
+#spanbtn{}
+#spanbtn span{ display:inline-block; width:18px; height:18px; border:#FFF 1px solid; text-align:center; color:#fff;}
+#spanbtn span:hover{color:#F00;}
+#midtop{ background:url(images/content_bg.jpg) ; height:360px;}
+.topleft{ background:url(images/content_sm_bg.jpg) repeat-x; height:336px; width:325px; float:left; margin-left:8px;margin-right:8px; border:solid 1px #D7D7D7;}
+.topleft span{ font-size:18px; color:#C60; font-weight:bold; font-family:"微软雅黑"; line-height:55px;}
+.titlecontent{margin-left:10px;background:url(images/contentimg.jpg) no-repeat left center ; text-indent:20px;}
+.titleimg{text-align:center; margin:15px;}
+.toplist{}
+.newslistul{ list-style:none; margin-left:20px;}
+.newslistul li{ font-size:12px; color:#5D5A5A; line-height:30px; background:url(images/ico.jpg) no-repeat center left; text-indent:20px;  border-bottom:#5D5A5A 1px dotted;}
+.linkul{ list-style:none; margin-left:20px; text-indent:20px;}
+.linkul li{ font-size:12px; color:#5D5A5A; line-height:30px;}
+#demo{ background:#FFF; width:720px; margin:10px auto; overflow:hidden; border:dotted 1px #ccc;}
+#indemo{ float:left; width:800%;}
+#indemo img{ margin:0px 10px;}
+#demo1{ float:left}
+#demo2{ float:left}
+
+
+
+
+#midbottom{ background:url(images/content_bg.jpg) ; height:300px;}
+
+#zixunbox{ width:104px; height:144px; position:absolute; top:200px; right:10px; z-index:100;}
+#zixunbox img {border:none;}
+
+#bbox { font-size:12px; text-align:center; line-height:30px;}
+
+#setindex{ width:200px; height:30px; position:absolute; right:-20px; top:-30px;}
+#setindex ul{ list-style:none; margin:0px; padding:0px; }
+#setindex ul li{ display:inline; }
+#setindex ul li a{  color:#690; font-weight:bold;font-size:16px;}

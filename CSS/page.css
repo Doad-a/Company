@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+DIV.digg{
+    margin-top: 15px;
+    PADDING-RIGHT: 3px; 
+    PADDING-LEFT: 3pX; 
+    PADDING-BOTTOM: 3px; 
+    margin: 3px; 
+    padding-top:3px; 
+    margin-top: 25px;
+    text-align: center;
+}
+
+DiV.digg a{
+    BORDER-RIGHT: #aaaadd 1px solid;
+    padding-right: 5px; 
+    BORDER-TOP: #aaaadd 1px solid; 
+    PADDING-LEFT: 5px; 
+    PADDING-BOTTOM: 2px;
+    MARGIN:2px; 
+    BORDER-LEFT: #aaaadd 1px solid; 
+    COLOR: #000099; 
+    PADDING-TOP: 2px; 
+    BORDER-BOTTOM: #aaaadd 1px solid; 
+    text-decoration: none;
+}
+
+div.digg A:hover{
+    BORDER-RIGHT: #000099 1px solid; 
+    border-top: #000099 1px solid; 
+    BORDER-LEFT: #000099 1px solid; 
+    padding-right: 5px; 
+    PADDING-LEFT: 5px; 
+    PADDING-BOTTOM: 2px;
+    MARGIN:2px;
+    COLOR: #000; 
+    border-bottom:#000099 1px solid;
+}
+
+div.digg A:active{
+    BORDER-RIGHT: #000099 1px solid; 
+    border-top: #000099 1px solid; 
+    BORDER-LEFT: #000099 1px solid; 
+    COLOR: #000; 
+    BORDER-BOTTOM: #000099 1px solid;
+}
+
+DIv.digg SPAN.current {
+    BORDER-RIGHT: #000099 1pX solid; 
+    padding-right: 5px; 
+    BORDER-TOP: #000099 1px solid; 
+    padding-left: 5pX; font-weight: bold;
+    padding-bottom: 2px; 
+    margin: 2px; 
+    BORDER-LEFT: #000099 1px solid; 
+    COLOR: #fff; 
+    PADDING-TOP: 2px; 
+    BORDER-BOTTOM: #000099 1px solid;
+    BACKGROUND-COLOR: #000099
+}
+
+div.digg span.disabled{
+    border-right: #eee 1рх solid; 
+    padding-right: 5рX; 
+    border-top: #eee 1рх solid; 
+    padding-left: 5рх; 
+    padding-bottom: 2рx; 
+    margin:2px; 
+    border-left: #eee Ipx solid; 
+    COLOR: #ddd; PADDING-TOP: 2px;
+    BORDER-BOTTOM: #eee 1px solid;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+
+</style>
+
+</head>
+
+<body>
+<script type="text/javascript"  >
+ 
+ //动态改变对联广告显示的高度
+ function ChangeHeight()
+ {
+		 
+    var QQForm=document.getElementById("ad");	  
+	 QQForm.style.top=document.body.scrollTop+document.documentElement.scrollTop+100+"px"
+ }
+
+window.onscroll=ChangeHeight;
+
+</script>
+<div id="adbox" style="height:1500px;">
+        <div id="ad" style=" position:absolute; right:10px; top:100px;">
+        <a   href='http://wpa.qq.com/msgrd?v=3&amp;uin=123456789&amp;site=www.cactussoft.cn&amp;menu=yes'> <img style='border:0px;'  src='images/services.jpg' /></a>
+        </div>
+</div>
+</body>
+</html>
